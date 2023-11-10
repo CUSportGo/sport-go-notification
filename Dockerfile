@@ -8,7 +8,5 @@ RUN yarn
 
 COPY . .
 
-EXPOSE 8084
-
 CMD ["yarn", "start:dev"]
 
