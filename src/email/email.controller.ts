@@ -5,13 +5,10 @@ import { mailOptions } from './email.dto';
 
 @Controller('')
 export class EmailController {
-    constructor(private readonly emailService: EmailService) { }
+  constructor(private readonly emailService: EmailService) {}
 
-
-
-    @EventPattern('forgot-password')
-    async handleforgotPasswordEvent(data: Record<string, mailOptions>) {
-
-        await this.emailService.handleforgotPasswordEvent(data.mailOptions)
-    }
+  @EventPattern('forgot-password')
+  async handleforgotPasswordEvent(data: Record<string, mailOptions>) {
+    await this.emailService.handleforgotPasswordEvent(data.mailOptions);
+  }
 }
