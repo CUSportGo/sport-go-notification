@@ -8,8 +8,8 @@ async function bootstrap() {
   const notificationGrpcOption: MicroserviceOptions = {
     transport: Transport.RMQ,
     options: {
-      urls: ["amqp://localhost:5672"],
-      queue: 'email_queue',
+      urls: [process.env.EMAIL_SERVICE_RMQ],
+      queue: process.env.EMAIL_QUEUE,
       queueOptions: { durable: false },
       prefetchCount: 1,
     },
